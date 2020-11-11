@@ -1,0 +1,23 @@
+@import './fonts';
+
+$serif_font: serif;
+$sans_font: sans-serif;
+
+/*
+ * COLORS
+ */
+$white: #FFF;
+$black: #000; // 5c5d5f
+$red: #D25151;
+
+$background_color: $black;
+$highlight_color: $red;
+$text_color: $white;
+
+/*
+ * ANIMATIONS
+ */
+// $ease_out: cubic-bezier(.23,.82,.44,1);
+$ease_out: cubic-bezier(.25,.1,.25,1);
+$ease_in: cubic-bezier(.42,0,1,1);
+$ease_in_out: cubic-bezier(.39,.01,.25,1);
