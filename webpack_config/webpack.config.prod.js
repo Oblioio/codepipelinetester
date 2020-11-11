@@ -1,7 +1,3 @@
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
