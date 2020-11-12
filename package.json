@@ -19,7 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "gsap": "^3.5.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -36,7 +37,11 @@
     "eslint-plugin-import": "^2.22.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webp-webpack-plugin": "^3.3.3",
+    "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^1.2.1",
+    "node-sass": "^5.0.0",
     "postcss": "^8.1.6",
     "postcss-loader": "^4.0.4",
     "postcss-scss": "^3.0.4",
