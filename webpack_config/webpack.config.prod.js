@@ -1,16 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const appDir = path.resolve(__dirname, '..', 'app');
 const distDir = path.resolve(__dirname, '..', '_site');
 
 const entry = {
-  mainjs: './js/main.js',
-  styles: './scss/main.scss',
-  critical: './scss/critical.scss'
+  mainjs: './js/main.js'
 };
 
 const plugins = [
@@ -25,15 +21,6 @@ const plugins = [
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,
-  }),
-
-  // Put all css code in this file
-  // new ExtractTextPlugin('css/main.css'),
-  new MiniCssExtractPlugin({
-    // Options similar to the same options in webpackOptions.output
-    // both options are optional
-    filename: 'css/[name].css',
-    chunkFilename: 'css/[id].css',
   })
 ];
 
@@ -97,36 +84,6 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.(scss|css)$/,
-          include: [
-            appDir,
-          ],
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: '../',
-              },
-            },
-            {
-              loader: 'css-loader'
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: [require('autoprefixer')({
-                    grid: 'no-autoplace'
-                  })],
-                }
-              },
-            },
-            {
-              loader: 'sass-loader',
-            }
-          ],
-        },
-        {
           test: /\.html$/,
           use: [
             {
@@ -142,7 +99,7 @@ module.exports = (env) => {
     },
 
     resolve: {
-      extensions: ['.js', '.scss', '.css'],
+      extensions: ['.js'],
       modules: [appDir, 'node_modules'],
     },
 
