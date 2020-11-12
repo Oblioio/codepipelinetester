@@ -34,12 +34,6 @@ const plugins = [
     // both options are optional
     filename: 'css/[name].css',
     chunkFilename: 'css/[id].css',
-  }),
-
-  new CopyWebpackPlugin({
-    patterns: [
-      { from: 'assets', to: 'assets' }
-    ]
   })
 ];
 
@@ -143,32 +137,7 @@ module.exports = (env) => {
               },
             },
           ],
-        },
-        {
-          test: /\.(woff(2)?|eot|ttf)(\?[a-z0-9]+)?$/,
-          include: [
-            appDir,
-          ],
-          use: 'file-loader?name=assets/fonts/[path]/[name].[ext]',
-        },
-        {
-          test: /\.(mp3|ogg)$/,
-          include: [
-            appDir,
-          ],
-          use: 'file-loader?name=sounds/[name].[ext]',
-        },
-        {
-          test: /\.(jpg|jpeg|png|gif|ico|webp|svg)$/,
-          include: [
-            appDir,
-          ],
-          use: [
-            {
-              loader: 'file-loader?name=assets/images/[path][name].[ext]&context=app/assets/images',
-            },
-          ],
-        },
+        }
       ],
     },
 
